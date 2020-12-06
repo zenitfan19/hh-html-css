@@ -1,0 +1,34 @@
+.header {
+    background-color: @color-dark;
+
+    &__content {
+        display: flex;
+        height: 60px;
+        align-items: center;
+    }
+
+    &__fill {
+        flex-grow: 1;
+    }
+
+    &__button {
+        margin-left: 20px;
+    }
+}
+
+.header-button-icon {
+    background: no-repeat 50% 50%;
+    border: 0;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
+}
+
+@icons: search, login, menu;
+
+each(@icons, {
+    .header-button-icon_@{value} {
+        background-image: url('@{value}.svg');
+    }
+})
