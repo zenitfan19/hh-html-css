@@ -5,6 +5,10 @@
         display: flex;
         height: 60px;
         align-items: center;
+
+        @media @screen-gt-m {
+            height: 80px;
+        }
     }
 
     &__fill {
@@ -13,6 +17,14 @@
 
     &__button {
         margin-left: 20px;
+    }
+
+    &__menu {
+        display: none;
+
+        @media @screen-gt-s {
+            display: block;
+        }
     }
 }
 
@@ -23,6 +35,13 @@
     width: 30px;
     height: 30px;
     text-indent: -9999px;
+    cursor: pointer;
+
+    &_login, &_menu {
+        @media @screen-gt-s {
+            display: none;
+        }
+    }
 }
 
 @icons: search, login, menu;
@@ -32,3 +51,23 @@ each(@icons, {
         background-image: url('@{value}.svg');
     }
 })
+
+.header-button {
+    box-sizing: border-box;
+    height: 38px;
+    padding: 0 20px;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    background-color: transparent;
+    border-radius: 19px;
+    font: 14px/36px Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+
+    &_login {
+        display: none;
+
+        @media @screen-gt-s {
+            display: inline-block;
+        }
+    }
+}
