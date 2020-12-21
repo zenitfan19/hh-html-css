@@ -1,0 +1,91 @@
+.footer {
+    background-color: #212122;
+    padding: 30px 0px;
+
+    &__icons {
+        display: flex;
+
+        @media @screen-gt-s {
+          margin: 2px 0;
+        }
+
+        @media @screen-gt-m {
+          margin: 5px 0;
+        }
+    }
+
+    &__icon {
+        width: 36px;
+        height: 36px;
+        text-indent: -9999px;
+        cursor: pointer;
+        background: no-repeat 50% 50%;
+        margin-right: 15px;
+
+        @icons: facebook, twitter, vk, instagram;
+
+        each(@icons, {
+            &_@{value} {
+                background-image: url('/images/@{value}.svg');
+            }
+        })
+    }
+
+    &__buttons {
+      margin: 30px 0;
+
+      @media @screen-gt-s {
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      @media @screen-gt-m {
+        margin: 3px 0;
+      }
+    }
+
+    &__button {      
+      border: 0;      
+      width: 140px;
+      height: 40px;
+      text-indent: -9999px;
+      cursor: pointer;      
+      padding: 0;
+      background-color: transparent;
+      margin-right: 6px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @icons: app-store, google-play;
+
+      each(@icons, {
+          &_@{value} {
+              background-image: url('/images/@{value}.svg');
+          }
+      })
+    }
+
+    &__line {
+      height: 1px;
+      background-color: #666;
+      margin-bottom: 15px;
+
+      @media @screen-gt-s {
+        margin: 30px 0;
+      }
+    }
+
+    &__info {
+      color: #999;
+    }
+
+    &__logo {
+      width: 46px;
+      height: 46px;
+      background-image: url('/images/hh.svg');
+      margin-left: auto;
+    }
+}

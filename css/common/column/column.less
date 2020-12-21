@@ -28,6 +28,14 @@
     width: @column-width-s;
     padding: 0 @column-padding-s;
 
+    &_hidden {
+      display: none;
+
+      @media @screen-gt-m {
+        display: block;
+      }
+    }
+
     @media @screen-gt-s {
         padding: 0 @column-padding-m;
     }
