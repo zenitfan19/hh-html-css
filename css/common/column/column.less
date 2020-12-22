@@ -28,6 +28,16 @@
     width: @column-width-s;
     padding: 0 @column-padding-s;
 
+    &_ordered {
+        @media @screen-gt-s {
+            each(range(3), {
+                &:nth-child(@{value}) {
+                    order: mod((@value), 3);          
+                }
+            })
+        }
+    }
+
     &_visible-l {
       display: none;
 

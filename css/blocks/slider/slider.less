@@ -1,14 +1,4 @@
 .slider {
-    .column {    
-        @media @screen-gt-s {
-            each(range(3), {
-                &:nth-child(@{value}) {
-                    order: mod((@value), 3);          
-                }
-            })
-        }
-    }
-
     &__image {
         max-width: 100%;
     }
